@@ -2,10 +2,13 @@
 * Copyright (c) G. Tomaselli <girotomaselli@gmail.com> 2015; Licensed  
 */
 angular.module('ByGiro.datetimePicker', [])
-.directive('bgapAddressPicker', ['$window','$parse','$compile', function ($window, $parse, $compile) {
+.directive('bgDatetimePicker', ['$window','$parse','$compile', function ($window, $parse, $compile) {
+	
 	
 	// I augment the template element DOM structure before linking.
 	function compile( tElement, tAttributes ) {
+		
+		var sublink = $compile( tElement, null, 1500 );
 
 		function link( scope, element, attributes, _, transclude ) {
 			
@@ -21,16 +24,14 @@ angular.module('ByGiro.datetimePicker', [])
 				options = scope.$parent[attributes.bgDtpOptions];
 			}
 			
-			bg(element).datetimepickerByGiro(options);
-			
-			/*
-			.on('selected.addressPickerByGiro', function(eve, data){
-				scope.address = data.cleanData;
-				
+			var res = bg(element).datetimepickerByGiro(options);
+
+			bg(element).on('datetimepickerByGiro_changed', function(eve, data){				
 				// update the scope
-				scope.$apply();
+				scope.$parent.$apply(function(){					
+					scope.dataValue = data.getValue();
+				});
 			});
-			*/
 			
 			sublink( scope );
 		}
