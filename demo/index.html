@@ -1,0 +1,39 @@
+<html ng-app="demoApp">
+<head>
+
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+	<script src="assets/jquery.datetimepicker.ByGiro.js"></script>
+	<script src="../dist/angular-datetime-picker-ByGiro.js"></script>
+	<script src="demo.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="demo.css" />
+  
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="assets/jquery.datetimepicker.ByGiro.css">
+
+</head>
+<body ng-controller="demoCtrl">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Angular directive: Datetime Picker ByGiro</h1>
+			<p>This is a directive to use the datetime Picker ByGiro</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<input class="col-lg-7" ng-model="my_datetime" type="text" autocomplete="off" data-bg-dtp-options="datetimePickerOptions" data-bg-datetime-picker>
+		</div>
+		<div class="col-md-6">
+			Model: <span ng-bind-html="my_datetime_output"></span>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>
