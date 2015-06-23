@@ -1,12 +1,12 @@
 .dtp-container.btn-group {
+	/* position: relative; */
 	font-size: inherit;
-	display: block;
 }
 
 .dtp-calendars {
 	position: absolute;
+	z-index: 100;
 	background: #fff;
-	margin-top: 30px;
 }
 
 .btn-close-calendar {
@@ -17,6 +17,7 @@
 	font-weight: bold;
 }
 
+.dtp-container,
 .dtp-calendar {
 	display: inline-block;
 }
@@ -52,6 +53,7 @@
 	background-color: #DBEFFF;
 }
 
+.dtp-toggler,
 .dtp-btn-viewtype,
 .dtp-item:not(.dtp-disabled),
 .dtp-item.dtp-disabled[data-dtp-message],
@@ -140,6 +142,10 @@
   background-color: #e7e7e7;
 }
 
+.dtp-calendars {
+	margin-top: 10px;
+}
+
 .dtp-calendar {
 	border: 3px solid #3399FF;
 	border-radius: 5px;
@@ -181,3 +187,8 @@
 	content: "\ea38";
 }
 /* icomoon */
+
+/* fix bootstrap input-append */
+.dtp-container.input-append .dtp-calendars {
+	font-size: 14px;
+}

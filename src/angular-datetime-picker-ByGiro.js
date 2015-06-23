@@ -27,10 +27,15 @@ angular.module('ByGiro.datetimePicker', [])
 			var res = bg(element).datetimepickerByGiro(options);
 
 			bg(element).on('datetimepickerByGiro_changed', function(eve, data){				
-				// update the scope
-				scope.$parent.$apply(function(){					
-					scope.dataValue = data.getValue();
-				});
+				// update the scope				
+				var phase = scope.$root.$$phase;
+				if (phase == '$apply' || phase == '$digest') {
+					scope.dataVal = data.dateToStr(data.getValue());
+				} else {
+					scope.$apply(function(){
+						scope.dataVal = data.dateToStr(data.getValue());
+					});
+				}
 			});
 			
 			sublink( scope );
@@ -44,7 +49,7 @@ angular.module('ByGiro.datetimePicker', [])
 		priority: 1500,
 		restrict: "A",
 		scope: {
-			dataValue: "=ngModel"
+			dataVal: "=?ngModel"
 		},
 		terminal: true,
 		transclude: true

@@ -2,11 +2,12 @@
 	angular.module('demoApp', ['ByGiro.datetimePicker'])
 		.controller('demoCtrl', [
 		'$scope','$filter','$sce','$window', function($scope, $filter, $sce, $window) {
-			$scope.my_datetime = {};
+			$scope.my_datetime = '';
 
 			var options = {
-				mode: 'multiple',
-				calendars: 3
+				mode: 'single',
+				format: 'd M Y H:i:s',
+				calendars: 1
 			};
 			
 			$scope.datetimePickerOptions = options;
@@ -36,11 +37,13 @@
 						
 					case 'single':
 					default:
-						result = ($filter('date')(input, format) || '');
+						result = $filter('date')(input, format);
 						break;
 				}
-				
-				$scope.my_datetime_output = $sce.trustAsHtml(result);
+
+				if(result){
+					$scope.my_datetime_output = $sce.trustAsHtml(result);
+				}
 			}, true);
 		}
 	]);
