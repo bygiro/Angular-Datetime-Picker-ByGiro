@@ -7,7 +7,7 @@ It will convert a simple input text into a Fully Featured datetimepicker.
 ### Install with Bower
 
 ```bash
-$ bower install angular angular-datetimepicker --save
+$ bower install angular angular-datetimepicker-ByGiro --save
 ```
 
 check the demo
