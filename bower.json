@@ -1,13 +1,13 @@
 {
   "name": "angular-datetime-picker-ByGiro",
-  "version": "v0.0.1",
+  "version": "v0.0.2",
   "authors": [
     "ByGiro <girotomaselli@gmail.com>"
   ],
   "contributors": [],
   "main": [
-	"dist/angular-datetime-picker-ByGiro.js",
-	"dist/angular-datetime-picker-ByGiro.min.js"
+    "dist/angular-datetime-picker-ByGiro.js",
+    "dist/angular-datetime-picker-ByGiro.min.js"
   ],
   "description": "Angular directive to use the jQuery Datetime Picker ByGiro",
   "keywords": [
@@ -25,7 +25,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": ">=1.2.x"
+    "angular": ">=1.2.x",
+    "jquery-datetimepicker": "*"
   },
   "devDependencies": {
     "chai": "~1.9.1",

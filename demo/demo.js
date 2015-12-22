@@ -16,7 +16,7 @@
 			$scope.$watch('my_datetime', function(){
 				var result = '',
 				input = $scope.my_datetime;
-				
+
 				switch(options.mode){
 					case 'range':
 						if(!(input instanceof Array)) break;
